@@ -16,7 +16,6 @@ st.markdown("""
     [data-testid="stSidebar"] { display: none; }
     :root { --naver-green: #03C75A; }
     
-    /* 1. k a m j a 로고: 네이버 스타일의 압도적 두께감 */
     .brand-logo {
         color: var(--naver-green);
         font-family: 'Nanum Gothic', sans-serif;
@@ -25,17 +24,16 @@ st.markdown("""
         text-transform: lowercase;
         letter-spacing: 12px !important;
         line-height: 1;
-        -webkit-text-stroke: 2.5px var(--naver-green); /* 외곽선으로 두께 증폭 */
+        -webkit-text-stroke: 2.5px var(--naver-green);
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    /* 2. 검색창: 세로 폭 조절 (padding 값을 조절하여 두께를 맞추세요) */
     div[data-baseweb="input"] {
         border: 2px solid #e3e5e8 !important;
         border-radius: 45px !important;
-        padding: 18px 35px !important; /* 이 값을 15~25 사이로 조절해보세요 */
+        padding: 18px 35px !important;
         min-height: 60px !important;
         box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
     }
@@ -45,7 +43,6 @@ st.markdown("""
     }
     div[data-baseweb="input"]:focus-within { border-color: var(--naver-green) !important; }
 
-    /* 결과 카드 및 버튼 스타일 */
     .res-card {
         border: 1px solid #f0f0f0; border-radius: 12px; padding: 22px;
         margin-bottom: 20px; background: #ffffff; transition: transform 0.2s ease;
@@ -118,7 +115,7 @@ with col_map:
 
     map_data = st_folium(m, width=950, height=800, key="kamja_map")
 
-# 우: 검색 결과
+# 오: 검색 결과
 with col_results:
     clicked_restaurant = None
     if map_data and map_data.get("last_object_clicked_popup"):
